@@ -1,0 +1,22 @@
+<h2>{{ title }}</h2>
+<p ng-hide="planes">LOADING PLANES NOW...</p>
+
+<div ng-repeat="p in planes">
+  <h3><strong>{{ p.manufacturer }}</strong> {{ p.model }}</h3>
+  <a ng-href="/plane/{{ p._id }}" class="btn btn-success">Details</a>
+</div>
+
+<div>
+  <h2>Want to add a new one?</h2>
+  <form ng-submit="makePlane()">
+    Manufacturer:
+    <input type="text" ng-model="mft">
+    Model:
+    <input type="text" ng-model="model">
+    Engines:
+    <input type="number" ng-model="eng">
+    Image:
+    <input type="url" ng-model="img">
+    <input type="submit">
+  </form>
+</div>
